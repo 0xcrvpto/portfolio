@@ -4,93 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DOS Portfolio</title>
-    <style>
-        body {
-            background-color: #000;
-            color: #00ff00;
-            font-family: 'Courier New', monospace;
-            margin: 0;
-            padding: 20px;
-            line-height: 1.6;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        .header {
-            border-bottom: 2px solid #00ff00;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-        }
-        .menu {
-            margin: 20px 0;
-        }
-        .menu-item {
-            margin: 10px 0;
-            cursor: pointer;
-        }
-        .menu-item:hover {
-            color: #fff;
-        }
-        .content {
-            display: none;
-            margin-top: 20px;
-        }
-        .content.active {
-            display: block;
-        }
-        .prompt {
-            color: #00ff00;
-            margin-top: 20px;
-        }
-        .cursor {
-            animation: blink 1s infinite;
-        }
-        @keyframes blink {
-            50% { opacity: 0; }
-        }
-        .download-cv {
-            margin: 20px 0;
-            padding: 10px;
-            border: 1px solid #00ff00;
-            display: inline-block;
-            cursor: pointer;
-            text-decoration: none;
-            color: #00ff00;
-        }
-        .download-cv:hover {
-            background-color: #00ff00;
-            color: #000;
-        }
-        .section-title {
-            color: #00ff00;
-            border-bottom: 1px solid #00ff00;
-            padding-bottom: 5px;
-            margin-bottom: 15px;
-        }
-    </style>
+    <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
     <div class="container">
-        <div class="header" style="display: flex; flex-direction: column; align-items: flex-start;">
-            <img src="assets/dp.jpg" alt="Profile Picture" style="width: 80px; height: 80px; border-radius: 8px; border: 2px solid #00ff00; margin-bottom: 10px; background: #000; object-fit: cover;" />
+        <div class="header">
+            <img src="assets/dp.jpg" alt="Profile Picture" />
             <h1>Faheem Mohammed</h1>
             <p>C:\PORTFOLIO\HIRE-ME.EXE</p>
-            <div style="display: flex; gap: 10px;">
+            <div style="display: flex; gap: 10px; justify-content: center;">
                 <a href="assets/Faheem_CV_25.pdf" class="download-cv" download>DOWNLOAD CV.EXE</a>
                 <a href="assets/Faheem_Onepager.pdf" class="download-cv" download>DOWNLOAD ONE-PAGER.EXE</a>
+            </div>
+            <div class="social-icons">
+                <a href="https://github.com/0xcrvpto" target="_blank" class="social-icon">GitHub</a>
+                <a href="https://x.com/0xcrvpto" target="_blank" class="social-icon">Twitter</a>
+                <a href="https://t.me/i0xcrvpto" target="_blank" class="social-icon">Telegram</a>
             </div>
         </div>
 
         <div class="menu">
             <div class="menu-item" onclick="showContent('about')">1. ABOUT.EXE</div>
             <div class="menu-item" onclick="showContent('experience')">2. EXPERIENCE.EXE</div>
-            <div class="menu-item" onclick="showContent('projects')">3. PROJECTS.EXE</div>
-            <div class="menu-item" onclick="showContent('skills')">4. SKILLS.EXE</div>
-            <div class="menu-item" onclick="showContent('contact')">5. CONTACT.EXE</div>
+            <div class="menu-item" onclick="showContent('skills')">3. SKILLS.EXE</div>
         </div>
 
-        <div id="about" class="content">
+        <div id="about" class="content fade-in">
             <h2 class="section-title">ABOUT.EXE</h2>
             <p>Name: Faheem</p>
             <p>Title: OG Web3 Growth Strategist</p>
@@ -98,65 +37,55 @@
             <p>Bio: OG Web3 Growth Strategist with 9+ years of cross-functional experience in business development, partnerships, and founder's office execution. Closed $1M+ in Web3 deals, scaled GTM functions, and built from zero to traction in high-velocity start up projects. Fluent in navigating early-stage chaos, driving revenue, and building bridges across AI and crypto.</p>
         </div>
 
-        <div id="experience" class="content">
+        <div id="experience" class="content fade-in">
             <h2 class="section-title">EXPERIENCE.EXE</h2>
-            <p>LokyAI (by DappLooker) - Growth Lead, Founder's Office (Dec 2024 - Present)</p>
-            <ul>
-                <li>Took Loky from 0 → $12M ATH with pure founder-led GTM</li>
-                <li>Closed $200K+ in strategic AI x crypto deals</li>
-                <li>Built ecosystem-first partnership playbook</li>
-                <li>Cut partner onboarding time by 35%</li>
-            </ul>
+            <div class="featured-projects">
+                <div class="project-card">
+                    <h3>LokyAI (by DappLooker)</h3>
+                    <p class="role">Growth Lead, Founder's Office (Dec 2024 - Present)</p>
+                    <ul>
+                        <li>Took Loky from 0 → $12M ATH with pure founder-led GTM</li>
+                        <li>Closed $200K+ in strategic AI x crypto deals</li>
+                        <li>Built ecosystem-first partnership playbook</li>
+                        <li>Cut partner onboarding time by 35%</li>
+                    </ul>
+                </div>
 
-            <p>DappLooker Analytics - Business Development & Partnerships (Jul 2024 - Present)</p>
-            <ul>
-                <li>Secured $300K+ in chain-specific partnerships and grants</li>
-                <li>Closed B2B BD across L1s and protocols</li>
-                <li>Won ecosystem grants (Celo, Movement Labs)</li>
-                <li>Architected internal CRM + GTM engine</li>
-            </ul>
+                <div class="project-card">
+                    <h3>DappLooker Analytics</h3>
+                    <p class="role">Business Development & Partnerships (Jul 2024 - Present)</p>
+                    <ul>
+                        <li>Secured $300K+ in chain-specific partnerships and grants</li>
+                        <li>Closed B2B BD across L1s and protocols</li>
+                        <li>Won ecosystem grants (Celo, Movement Labs)</li>
+                        <li>Architected internal CRM + GTM engine</li>
+                    </ul>
+                </div>
 
-            <p>House of Web3 - Business Development & Partnerships (Mar 2024 - Jul 2024)</p>
-            <ul>
-                <li>Achieved 25% lead win rate through market research</li>
-                <li>30% lift in successful deal closures</li>
-                <li>Improved lead conversion velocity by 20%</li>
-            </ul>
+                <div class="project-card">
+                    <h3>House of Web3</h3>
+                    <p class="role">Business Development & Partnerships (Mar 2024 - Jul 2024)</p>
+                    <ul>
+                        <li>Achieved 25% lead win rate through market research</li>
+                        <li>30% lift in successful deal closures</li>
+                        <li>Improved lead conversion velocity by 20%</li>
+                    </ul>
+                </div>
 
-            <p>Blockwiz - Business Development Manager (Jan 2023 - Mar 2024)</p>
-            <ul>
-                <li>25% increase in new client acquisition</li>
-                <li>40% increase in LTV for power clients</li>
-                <li>93% CSAT score as Head of Client Success</li>
-                <li>Reduced support resolution time to 4 hours</li>
-            </ul>
+                <div class="project-card">
+                    <h3>Blockwiz</h3>
+                    <p class="role">Business Development Manager (Jan 2023 - Mar 2024)</p>
+                    <ul>
+                        <li>25% increase in new client acquisition</li>
+                        <li>40% increase in LTV for power clients</li>
+                        <li>93% CSAT score as Head of Client Success</li>
+                        <li>Reduced support resolution time to 4 hours</li>
+                    </ul>
+                </div>
+            </div>
         </div>
 
-        <div id="projects" class="content">
-            <h2 class="section-title">PROJECTS.EXE</h2>
-            <p>LokyAI Growth Strategy</p>
-            <ul>
-                <li>Built and executed ecosystem-first partnership playbook</li>
-                <li>Developed plug-and-play systems for partner activation</li>
-                <li>Positioned as go-to AI-powered data layer in Web3 infra</li>
-            </ul>
-
-            <p>DappLooker Analytics Platform</p>
-            <ul>
-                <li>Secured strategic partnerships with L1s and protocols</li>
-                <li>Developed zero-friction analytics layer for Web3 teams</li>
-                <li>Created internal CRM and GTM systems</li>
-            </ul>
-
-            <p>Blockwiz Operations Optimization</p>
-            <ul>
-                <li>Designed automated sales workflows</li>
-                <li>Built internal sales and CS asset stack</li>
-                <li>Improved ops efficiency by 25%</li>
-            </ul>
-        </div>
-
-        <div id="skills" class="content">
+        <div id="skills" class="content fade-in">
             <h2 class="section-title">SKILLS.EXE</h2>
             <p>Core Competencies:</p>
             <ul>
@@ -177,13 +106,6 @@
                 <li>Pitch Decks</li>
                 <li>AI x Web3 Integration</li>
             </ul>
-        </div>
-
-        <div id="contact" class="content">
-            <h2 class="section-title">CONTACT.EXE</h2>
-            <p>Email: <a href="mailto:faheemmdofficial@gmail.com?subject=We%20love%20your%20CV%2C%20let's%20talk!&body=Hi%20Faheem%2C%0A%0AWe%20love%20your%20CV%20and%20would%20like%20to%20connect!%0A%0ARegards%2C%0A" style="color:#00ff00; text-decoration:underline;">faheemmdofficial@gmail.com</a></p>
-            <p>Twitter: <a href="https://x.com/0xcrvpto" target="_blank" style="color:#00ff00; text-decoration:underline;">@0xcrvpto</a></p>
-            <p>Telegram: <a href="https://t.me/i0xcrvpto" target="_blank" style="color:#00ff00; text-decoration:underline;">@i0xcrvpto</a></p>
         </div>
 
         <div class="prompt">
